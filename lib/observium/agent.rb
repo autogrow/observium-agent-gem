@@ -2,6 +2,14 @@ require "observium/agent/version"
 
 module Observium
   module Agent
-    # Your code goes here...
+    extend self
+
+    def defaults
+      {
+        port: 6556,
+        timeout: 5
+      }
+    end
+
   end
 end
