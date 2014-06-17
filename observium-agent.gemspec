@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "observium-agent"
   spec.version       = Observium::Agent::VERSION
   spec.authors       = ["Robert McLeod"]
-  spec.email         = ["robert@penguinpower.co.nz"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["robert@autogrow.com"]
+  spec.summary       = %q{Ruby gem to interface with Observium Agents}
+  spec.description   = %q{Interface with Observium Agents using ruby to gather system information}
+  spec.homepage      = "https://github.com/AutogrowSystems/observium-agent-gem"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
