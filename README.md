@@ -23,12 +23,18 @@ Or install it yourself as:
 Here's how to use the gem in your code, it's pretty simple:
 
 ```ruby
+# Poll and parse
 output = Observium::Agent::Poller.new("host.example.com").poll
 parser = Observium::Agent::Parser.new(output)
 
-parser.has_section? "dmi" # we will be using :symbols soon
-dmi = parser.section "dmi"
+# See what sections are available
+parser.sections # ["dmi", "dpkg", "kernel", "ps", "uptime"]
 
+# or check if a section is available
+parser.has_section? "dmi" # we will be using :symbols soon
+
+# Get the section and dump a field
+dmi = parser.section "dmi"
 puts dmi[:processor_version] # outputs Genuine Intel(R) CPU N270 @ 1.60GHz
 ```
 

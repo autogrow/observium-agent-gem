@@ -1,6 +1,8 @@
 module Observium
   module Agent
     class Parser
+      attr_reader :sections
+
       def initialize(text)
         @text = text
 
@@ -32,7 +34,7 @@ module Observium
       end
 
       def has_section?(title)
-        @section_index.include? title
+        @sections.include? title
       end
 
       def symbolize_field(field)
@@ -56,7 +58,7 @@ module Observium
 
       def preprocess
         @lines = @text.split("\n")
-        @section_index = @text.scan(/<<<([^>]*)>>>/).map {|s| s.first }
+        @sections = @text.scan(/<<<([^>]*)>>>/).map {|s| s.first }
       end
     end
   end
